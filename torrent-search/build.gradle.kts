@@ -42,7 +42,7 @@ afterEvaluate {
             register<MavenPublication>("release") {
                 groupId = "com.github.felixbrucker"
                 artifactId = "torrent-search-api-kt"
-                version = "1.0.1"
+                version = "1.0.2"
 
                 from(components["release"])
             }
