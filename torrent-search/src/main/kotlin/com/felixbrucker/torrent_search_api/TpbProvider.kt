@@ -1,7 +1,6 @@
 package com.felixbrucker.torrent_search_api
 
 import androidx.core.net.toUri
-import java.net.URLEncoder
 import java.time.Instant
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -16,12 +15,11 @@ class TpbProvider : TorrentProvider {
         page: Int?,
         orderBy: OrderBy?
     ): Result<PaginatedSearchResult> = runCatching {
-        val encodedTerm = URLEncoder.encode(term, "UTF-8")
         val tpbCategory = mapCategory(category)
         val tpbOrder = mapOrder(orderBy)
         val tpbPage = (page ?: 1)
 
-        val url = "$baseUrl/search/$encodedTerm/$tpbPage/$tpbOrder/$tpbCategory"
+        val url = "$baseUrl/search/$term/$tpbPage/$tpbOrder/$tpbCategory"
         val doc = ScraperUtils.fetchDocument(url)
         val rows = doc.select("table#searchResult tr").filter { it.select("td").isNotEmpty() }
 
