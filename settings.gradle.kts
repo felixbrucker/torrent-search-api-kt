@@ -24,3 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "torrent-search-api"
 include(":torrent-search")
+include(":sample")
