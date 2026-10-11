@@ -31,6 +31,8 @@ data class PaginatedSearchResult(
 enum class Category {
     VIDEO,
     ANIME_ENGLISH_TRANSLATED,
+    MOVIES,
+    TV_SHOWS,
 }
 
 /**

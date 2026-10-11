@@ -69,7 +69,7 @@ class NyaaProvider : TorrentProvider {
     }
 
     private fun mapCategory(category: Category?): String = when (category) {
-        Category.VIDEO, null -> "0_0"
+        Category.VIDEO, Category.MOVIES, Category.TV_SHOWS, null -> "0_0"
         Category.ANIME_ENGLISH_TRANSLATED -> "1_2"
     }
 
