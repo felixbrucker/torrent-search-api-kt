@@ -83,7 +83,7 @@ class TpbProvider : TorrentProvider {
 
     private fun mapCategory(category: Category?): Int = when (category) {
         Category.ANIME_ENGLISH_TRANSLATED, null -> 0
-        Category.VIDEO -> 200
+        Category.VIDEO, Category.MOVIES, Category.TV_SHOWS -> 200
     }
 
     private fun mapOrder(orderBy: OrderBy?): Int = when (orderBy) {
